@@ -31,6 +31,8 @@ All four are skill definitions (markdown + tests), not running applications. The
 ### /issue-forensics (sibling skill)
 - `issue-forensics/SKILL.md` — Upstream-contribution investigation playbook. 4-question entry gate (Q1 hard gate) + 5-pillar playbook + quick-report exit template + structured draft template.
 - `issue-forensics/references/loki-21524.md` — Embedded gold-standard exemplar with provenance header. Lazy-loaded by the skill prompt only when trigger conditions fire.
+- `issue-forensics/references/pillar-5-grep-discipline.md` — Per-language structural-feature checklists (C/C++, Go, Python, TS/JS) plus tool escape hatches (scip-*, ast-grep, clangd). Lazy-loaded by SKILL.md only when Pillar 5 trigger conditions fire.
+- `issue-forensics/references/decisions/2026-04-graph-investigation.md` — Decision log for the graph-vs-grep evaluation that motivated the Pillar 5 grep-discipline expansion. Documents why grep with discipline beat graph tooling for the corpus.
 - `issue-forensics/VERSION` — Independent skill version (starts at 0.1.0).
 - `issue-forensics/CHANGELOG.md` — Per-skill changelog.
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [1.12.0] - 2026-05-10
 
 ### Fixes
 
@@ -27,6 +27,35 @@
   announcement (`Target: <slug> (from cwd)`) in the common case; the
   blocking prompt only fires when cwd isn't a git repo. First-
   invocation DX fix. See `issue-forensics/CHANGELOG.md` for detail.
+
+### Changed
+
+- **`/issue-forensics` 0.1.2 → 0.1.3**: Pillar 5 grep discipline expanded
+  from 12 lines to per-language structural checklists (C/C++, Go, Python,
+  TS/JS) with tool escape hatches (scip-*, ast-grep, clangd) documented as
+  explicit non-defaults. Motivated by a graph-vs-grep investigation that
+  found grep with discipline sufficient for the corpus; decision log at
+  `issue-forensics/references/decisions/2026-04-graph-investigation.md`.
+  No user-visible behavior change. See `issue-forensics/CHANGELOG.md`
+  for detail.
+- **`/deps` ↔ `/codebase-audit` cross-skill discovery hints**. `/deps`
+  was orphaned from its siblings — neither skill mentioned it, and
+  `/deps` mentioned no siblings. Added bidirectional references so the
+  LLM can guide users between `/codebase-audit`'s shallow Phase 1.7 CVE
+  scan and `/deps`'s deeper dependency remediation: Phase 1.7 now
+  suggests `/deps` (or `/deps cve` for security-only fixes) when the
+  dependency vulnerability check surfaces findings; Phase 4.3's
+  Dependency Vulnerabilities report section notes `/deps` can investigate
+  and remediate further; `/deps` frontmatter description acknowledges
+  the complementarity. Pure discovery wiring — no behavior change in
+  either skill, just makes the relationship legible to the LLM at
+  invocation time.
+- **README "About the repo name" section** rewritten from placeholder
+  filler text to the actual zorille/zorilla story (alternate French
+  spelling of the African striped polecat, *Ictonyx striatus*, family
+  Mustelidae). v1.10.0's CHANGELOG framed the README rewrite as complete;
+  this is the small follow-up polish that filled in the personality
+  section.
 
 ## [1.11.0] - 2026-04-15
 
